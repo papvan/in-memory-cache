@@ -14,7 +14,7 @@ type Item struct {
 	Created time.Time
 }
 
-func NewCache() *Cache {
+func New() *Cache {
 	items := make(map[string]Item)
 
 	return &Cache{
