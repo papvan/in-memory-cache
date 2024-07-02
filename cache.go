@@ -28,13 +28,13 @@ func (c *Cache) Set(key string, value interface{}) {
 	}
 }
 
-func (c *Cache) Get(key string) (interface{}, bool) {
+func (c *Cache) Get(key string) interface{} {
 	item, ok := c.items[key]
 	if !ok {
-		return nil, false
+		return nil
 	}
 
-	return item.Value, true
+	return item.Value
 }
 
 func (c *Cache) Delete(key string) error {
