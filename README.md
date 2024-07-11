@@ -1,7 +1,7 @@
 # in-memory-cache
 
 ## Description
-It's a simple in-memory cache written using Go
+It's a simple in-memory cache written using Go. Cache constructor has 1 attribute it's a time interval the cache will start cleanup process
 
 ## Example
 ```go
@@ -15,9 +15,9 @@ import (
 
 func main() {
 
-	cache := cache.New()
+	cache := cache.New(time.Second * 5)
 
-	cache.Set("userId", 42)
+	cache.Set("userId", 42, time.Second * 7)
 	userId := cache.Get("userId")
 
 	fmt.Println(userId)
